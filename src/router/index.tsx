@@ -1,7 +1,8 @@
 //页面：/login  /person_info /exam_select  /exam/:exam_id  /exam_history /read_exam/:exam_id
 // /corret_exam_list /corret_exam/:exam_id /student_manage /subject_manage /subject_add /admin_manage
 
-import Login from "@/page/login";
+type RouterDataType = typeof routersData
+export type RouterKeys = keyof RouterDataType
 
 
 export const routersData = {
@@ -31,7 +32,7 @@ export const routersData = {
   },
   exam_select: {// 页面3： 考题选择 （学生）
     path: '/exam_select',
-    hasMenu: false,
+    hasMenu: true,
   },
   person_info: { // 页面2： 个人信息录入（学生 管理员）
     path: '/person_info',
@@ -54,3 +55,53 @@ export const routersData = {
     hasMenu: true,
   },
 }
+
+export const studentMenus = [{
+  label: '考题选择',
+  key: 'exam_select',
+},{
+  label: '考试记录',
+  key: 'exam_history',
+}]
+
+export const adminMenus = [{
+  label: '阅卷列表',
+  key: 'corret_exam_list',
+}, {
+  label: '考题管理',
+  key: 'subject_add',
+}, {
+  label: '课程管理',
+  key: 'subject_manage',
+}, {
+  label: '学员管理',
+  key: 'student_manage',
+}]
+
+export const superAdminMenus = [{
+  label: '阅卷列表',
+  key: 'corret_exam_list',
+}, {
+  label: '考题管理',
+  key: 'subject_add',
+}, {
+  label: '课程管理',
+  key: 'subject_manage',
+}, {
+  label: '学员管理',
+  key: 'student_manage',
+}, {
+  label: '管理员管理',
+  key: 'admin_manage',
+}]
+
+export const examSelectMenus=[{
+  label: "开始考试",
+  key: "exam_select",
+},
+  {
+    label: "考试记录",
+    key: "exam_history",
+  },
+]
+
