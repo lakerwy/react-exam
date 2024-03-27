@@ -4,6 +4,7 @@ import { useState } from 'react';
 import React from "react";
 import useIsShowHeader from "@/components/hooks/useIsShowHeader"
 import styles from './index.module.scss'
+import { useLocation   } from "react-router-dom";
 
 import { AppstoreOutlined, MailOutlined, UserOutlined, BellOutlined } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu, theme, Avatar, Space  } from 'antd';
@@ -28,6 +29,7 @@ const items: MenuProps['items'] = [
 ];
 
 const MyLayout: React.FC = ()=> {
+  const match = useLocation ();
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -45,6 +47,8 @@ const MyLayout: React.FC = ()=> {
   if (!is_show_header) {
     return <><Outlet /></>
   }
+
+  console.log(match)
   return (
       <Layout className={styles.myLayout}>
         <Header className={styles.myLayout_header}
@@ -71,7 +75,7 @@ const MyLayout: React.FC = ()=> {
             {is_show_menu &&
             <Menu
                 mode="horizontal"
-                onClick={onClick}
+                onClick={onCLickDb}
                 items={items}
                 selectedKeys={[current]}
                 style={{flex: 1, minWidth: 0}}
