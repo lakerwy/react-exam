@@ -7,7 +7,7 @@ export interface CounterState {
   status: 'idle' | 'loading' | 'failed';
 }
 
-const initialState: CounterState = {
+const initialState: CounterState = {     //声明的state
   value: 0,
   status: 'idle',
 };
@@ -26,7 +26,7 @@ export const incrementAsync = createAsyncThunk(
   }
 );
 
-export const counterSlice = createSlice({
+export const counterSlice = createSlice({        //提交改变state的方法
   name: 'counter',
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
