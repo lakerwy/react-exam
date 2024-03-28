@@ -20,7 +20,7 @@ export const routersData = {
   },
   corret_exam_list: { // 页面7： 批阅试卷列表（管理员）
     path: '/corret_exam_list',
-    hasMenu: false,
+    hasMenu: true,
   },
   exam: { // 页面4： 考试 (学生)
     path: '/exam/:exam_id',
