@@ -13,6 +13,8 @@ import StudentManage from '@/page/student_manage';
 import StudentAdd from '@/page/subject_add';
 import SubjectManage from '@/page/subject_manage';
 import Layout from "@/components/layout";
+import {AppstoreOutlined, MailOutlined} from "@ant-design/icons";
+import React from "react";
 
 export const routersData = [
   {
@@ -45,7 +47,7 @@ export const routersData = [
       { // 页面7： 批阅试卷列表（管理员）
         path: '/corret_exam_list',
         name: 'corret_exam_list',
-        hasMenu: false,
+        hasMenu: true,
         element: <CorretExamList />
       },
       { // 页面4： 考试 (学生)
@@ -58,12 +60,14 @@ export const routersData = [
         path: '/exam_history',
         name: 'exam_history',
         hasMenu: true,
+        icon: <AppstoreOutlined />,
         element: <ExamHistory />
       },
       {// 页面3： 考题选择 （学生）
         path: '/exam_select',
         name: 'exam_select',
         hasMenu: true,
+        icon: <MailOutlined />,
         element: <ExamSelect />
       },
       { // 页面2： 个人信息录入（学生 管理员）
